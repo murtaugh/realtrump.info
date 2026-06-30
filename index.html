@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>In his words.</title>
+<meta name="description" content="A verbatim, sourced record of what Donald Trump has said — one statement at a time, each linked to its original source.">
+<meta name="color-scheme" content="light">
+<meta property="og:title" content="In his words.">
+<meta property="og:description" content="A verbatim, sourced record — one statement at a time, each linked to its original source.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
+<link href="https://fonts.bunny.net/css?family=archivo:400,500,700,800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#111111;
+    --ink-soft:#1c1c1a;
+    --muted:#555555;
+    --muted-2:#666666;
+    --label:#999999;
+    --hair:#d7d7d1;
+    --chip-border:#c9c9c3;
+    --paper:#ffffff;
+    --pad-x:clamp(20px, 5vw, 48px);
+    --pad-y:clamp(20px, 4vh, 40px);
+    --maxw:820px;
+    --font:'Archivo', system-ui, -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html{-webkit-text-size-adjust:100%;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--font);
+    font-weight:400;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+    text-rendering:optimizeLegibility;
+  }
+  .wrap{width:100%;max-width:var(--maxw);margin-inline:auto;padding-inline:var(--pad-x);}
+
+  /* ---- Hero: viewport-tall flex column, normal document flow (no fixed/sticky) ---- */
+  .hero{
+    min-height:100vh;
+    min-height:100dvh;
+    display:flex;
+    flex-direction:column;
+  }
+
+  /* Header pinned to the top of the hero */
+  .site-header{flex:0 0 auto;padding-top:var(--pad-y);}
+  .masthead{
+    font-size:22px;font-weight:800;letter-spacing:-0.01em;line-height:1;
+    padding-bottom:16px;border-bottom:2px solid var(--ink);margin:0;
+  }
+  .masthead a{color:inherit;text-decoration:none;}
+
+  /* Record vertically centered in the space between header and filter bar */
+  .record{flex:1 1 auto;display:flex;align-items:center;padding-block:24px;}
+  .record .wrap{display:flex;flex-direction:column;justify-content:center;}
+
+  .entry{animation:rise .26s ease both;}
+  @keyframes rise{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
+
+  .question{margin:0;font-weight:800;color:var(--ink);}
+  .quote{margin:0;font-weight:400;color:var(--ink-soft);}
+  .quote p{margin:0;}
+  .context{margin:14px 0 0;font-size:14px;line-height:1.5;color:var(--muted);}
+  .source{margin:18px 0 0;}
+  .source-link{
+    font-size:12px;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;
+    color:var(--muted-2);text-decoration:none;border-bottom:1px solid transparent;
+    transition:border-color .15s ease,color .15s ease;
+  }
+  a.source-link:hover{color:var(--ink);border-bottom-color:var(--ink);}
+
+  /* Emphasis: QUESTION leads — big headline, quote as lede under it */
+  .mode-question .question{font-size:clamp(24px, 4.6vw, 32px);line-height:1.1;letter-spacing:-0.015em;margin-bottom:18px;}
+  .mode-question .quote{font-size:clamp(17px, 2.4vw, 19px);line-height:1.55;border-left:4px solid var(--ink);padding-left:16px;}
+
+  /* Emphasis: QUOTE leads — small standfirst question, quote goes big */
+  .mode-quote .question{font-size:15px;font-weight:500;line-height:1.4;color:var(--muted);margin-bottom:14px;}
+  .mode-quote .quote{font-size:clamp(24px, 4.6vw, 32px);line-height:1.13;letter-spacing:-0.015em;font-weight:800;color:var(--ink);}
+  .mode-quote .quote p{quotes:"\201C" "\201D";}
+  .mode-quote .quote p::before{content:open-quote;}
+  .mode-quote .quote p::after{content:close-quote;}
+
+  /* Filter bar pinned to the bottom of the hero */
+  .filter-bar{flex:0 0 auto;padding-bottom:var(--pad-y);padding-top:16px;}
+  .filter-bar .wrap{border-top:1px solid var(--hair);padding-top:16px;}
+  .filter-label{display:block;font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--label);margin-bottom:11px;}
+  .filter-row{display:flex;align-items:flex-end;}
+  .chips{flex:1 1 auto;min-width:0;display:flex;flex-wrap:wrap;gap:8px;}
+
+  .chip{
+    font-family:var(--font);font-size:12px;font-weight:500;
+    padding:5px 11px;border:1px solid var(--chip-border);border-radius:4px;
+    color:#333;background:var(--paper);cursor:pointer;
+    transition:border-color .15s ease,background .15s ease,color .15s ease;
+  }
+  .chip:hover{border-color:var(--ink);}
+  .chip.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+
+  /* Random: same box size as a chip, darker border + glyph so it reads as an action.
+     Locked to the lower-right corner; bottom-aligned so it stays put as chips wrap. */
+  .rnd{
+    flex:0 0 auto;margin-left:32px;
+    font-family:var(--font);font-size:12px;font-weight:700;
+    padding:5px 11px;border:1px solid var(--ink);border-radius:4px;
+    color:var(--ink);background:var(--paper);cursor:pointer;white-space:nowrap;
+    transition:background .15s ease,color .15s ease;
+  }
+  .rnd:hover{background:var(--ink);color:#fff;}
+  .rnd .gly{margin-right:5px;}
+
+  /* Footer — below the hero, scrolls into view normally */
+  .site-footer{border-top:1px solid var(--hair);padding-block:clamp(28px,6vh,56px);}
+  .footer-head{font-size:14px;font-weight:700;letter-spacing:0.04em;margin:0 0 8px;}
+  .footer-body{font-size:14px;line-height:1.6;color:#444;margin:0 0 18px;max-width:46ch;}
+  .footer-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:18px;}
+  .footer-links a,.footer-links button{
+    font-family:var(--font);font-size:12px;font-weight:500;letter-spacing:0.04em;
+    color:var(--ink);background:none;border:0;padding:0;cursor:pointer;
+    text-decoration:none;border-bottom:1px solid var(--ink);
+  }
+  .footer-links a:hover,.footer-links button:hover{color:var(--muted);border-bottom-color:var(--muted);}
+  .colophon{font-size:11px;font-weight:500;letter-spacing:0.06em;color:var(--label);margin:0;}
+
+  /* Error / empty states */
+  .notice{max-width:52ch;}
+  .notice h1{font-size:clamp(22px,4vw,28px);line-height:1.15;font-weight:800;margin:0 0 14px;}
+  .notice p{font-size:16px;line-height:1.6;color:var(--muted);margin:0 0 10px;}
+  .notice code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:0.9em;background:#f1f0ea;padding:2px 6px;border-radius:3px;}
+
+  :focus-visible{outline:2px solid var(--ink);outline-offset:3px;border-radius:2px;}
+
+  @media (max-width:560px){
+    .masthead{font-size:20px;}
+    .mode-question .question,.mode-quote .quote{font-size:22px;}
+    .mode-question .quote{font-size:16px;}
+    .mode-quote .question{font-size:14px;}
+    .filter-row{flex-direction:column;align-items:stretch;}
+    .rnd{margin-left:0;margin-top:12px;width:100%;text-align:center;}
+  }
+
+  @media (prefers-reduced-motion:reduce){
+    .entry{animation:none;}
+    *{transition:none !important;}
+  }
+</style>
+</head>
+<body>
+  <div class="hero">
+    <header class="site-header">
+      <div class="wrap">
+        <p class="masthead"><a href="?" id="home">In his words.</a></p>
+      </div>
+    </header>
+
+    <main class="record" id="record" aria-live="polite" aria-atomic="true">
+      <div class="wrap">
+        <p class="notice">Loading…</p>
+      </div>
+    </main>
+
+    <nav class="filter-bar" aria-label="Filter by topic and shuffle">
+      <div class="wrap">
+        <span class="filter-label" id="filter-label">Filter by topic</span>
+        <div class="filter-row">
+          <div class="chips" id="chips" role="group" aria-label="Topics"></div>
+          <button class="rnd" id="random" type="button"><span class="gly" aria-hidden="true">&#8635;</span>Random</button>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <h2 class="footer-head">About this project</h2>
+      <p class="footer-body">Every entry is a verbatim quote linked to its original source &mdash; a news report, transcript, or official record. Nothing here is paraphrased or summarized.</p>
+      <div class="footer-links">
+        <button type="button" id="browse-all">Browse all</button>
+        <a href="mailto:corrections@realtrump.info">Submit a correction</a>
+        <a href="quotes.json">Source data</a>
+      </div>
+      <p class="colophon" id="colophon"></p>
+    </div>
+  </footer>
+
+<!--
+  ============================================================
+  DATA: edit quotes.json. Each entry:
+  {
+    "id":          "unique-slug",            // used in the shareable URL (?q=slug)
+    "question":    "What does ...?",          // the framing question
+    "quote":       "verbatim sourced quote",  // exact words — never paraphrased
+    "context":     "Said at ... (optional)",  // optional one-line setting
+    "source_url":  "https://...",             // link to the primary source
+    "source_name": "Reuters",                 // publisher / outlet
+    "date":        "2024-09-15",              // ISO 8601 (YYYY-MM-DD)
+    "tags":        ["housing","economy"],     // lowercase slugs; drive the filter chips
+    "emphasis":    "quote"                    // optional: "quote" | "question".
+  }                                           // omit emphasis to auto-pick by quote length.
+
+  URLs:  ?q=slug   -> a specific statement (deep link)
+         #tag      -> filtered to a topic (Random draws from that topic)
+  ============================================================
+-->
+<script>
+(function(){
+  "use strict";
+
+  var QUOTE_LEADS_MAX = 80; // when "emphasis" is omitted, quotes shorter than this lead.
+  var ENTRIES = [];
+  var activeTag = null;
+  var current = null;
+
+  var recordEl = document.getElementById('record');
+  var chipsEl  = document.getElementById('chips');
+
+  function esc(s){
+    return String(s == null ? '' : s).replace(/[&<>"']/g, function(c){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
+    });
+  }
+  function isHttp(u){ return /^https?:\/\//i.test(String(u || '')); }
+
+  function formatDate(iso){
+    if(!iso) return '';
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(iso);
+    if(!m) return esc(iso);
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    return (+m[3]) + ' ' + months[(+m[2]) - 1] + ' ' + m[1];
+  }
+  function prettyTag(slug){
+    var s = String(slug || '').replace(/[-_]+/g, ' ').trim();
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  function tagsOf(e){ return Array.isArray(e.tags) ? e.tags : []; }
+  function tagExists(t){ return ENTRIES.some(function(e){ return tagsOf(e).indexOf(t) !== -1; }); }
+
+  function emphasisOf(e){
+    if(e.emphasis === 'quote' || e.emphasis === 'question') return e.emphasis;
+    return String(e.quote || '').length < QUOTE_LEADS_MAX ? 'quote' : 'question';
+  }
+
+  function pool(){
+    if(!activeTag) return ENTRIES;
+    var p = ENTRIES.filter(function(e){ return tagsOf(e).indexOf(activeTag) !== -1; });
+    return p.length ? p : ENTRIES;
+  }
+  function pickRandom(){
+    var p = pool();
+    if(p.length <= 1) return p[0] || null;
+    var pick;
+    do { pick = p[Math.floor(Math.random() * p.length)]; }
+    while(current && pick && pick.id === current.id);
+    return pick;
+  }
+
+  function entryHTML(e){
+    var mode = emphasisOf(e);
+    var dateStr = formatDate(e.date);
+    var inner = 'Source &middot; ' + esc(e.source_name || 'Unknown') + (dateStr ? (' &middot; ' + dateStr) : '') + ' &#8599;';
+    var src = isHttp(e.source_url)
+      ? '<a class="source-link" href="' + esc(e.source_url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
+      : '<span class="source-link">' + inner + '</span>';
+    var ctx = e.context ? '<p class="context">' + esc(e.context) + '</p>' : '';
+    return '<article class="entry mode-' + mode + '">'
+      + '<h1 class="question">' + esc(e.question) + '</h1>'
+      + '<blockquote class="quote"><p>' + esc(e.quote) + '</p></blockquote>'
+      + ctx
+      + '<p class="source">' + src + '</p>'
+      + '</article>';
+  }
+
+  function syncURL(e){
+    var url = location.pathname + '?q=' + encodeURIComponent(e.id)
+      + (activeTag ? ('#' + encodeURIComponent(activeTag)) : '');
+    try { history.replaceState(null, '', url); } catch(_){}
+  }
+
+  function show(e){
+    if(!e){ return; }
+    current = e;
+    recordEl.querySelector('.wrap').innerHTML = entryHTML(e);
+    document.title = e.question + ' — In his words.';
+    syncURL(e);
+  }
+
+  function reflectChips(){
+    var btns = chipsEl.querySelectorAll('.chip');
+    for(var i = 0; i < btns.length; i++){
+      var on = btns[i].getAttribute('data-tag') === activeTag;
+      btns[i].classList.toggle('on', on);
+      btns[i].setAttribute('aria-pressed', on ? 'true' : 'false');
+    }
+  }
+  function setTag(tag){
+    activeTag = tag || null;
+    reflectChips();
+  }
+  function onTagClick(tag){
+    setTag(activeTag === tag ? null : tag);
+    show(pickRandom());
+  }
+
+  function buildChips(){
+    var counts = {};
+    ENTRIES.forEach(function(e){
+      tagsOf(e).forEach(function(t){ counts[t] = (counts[t] || 0) + 1; });
+    });
+    var tags = Object.keys(counts).sort(function(a, b){
+      return counts[b] - counts[a] || a.localeCompare(b);
+    });
+    chipsEl.innerHTML = tags.map(function(t){
+      return '<button class="chip" type="button" data-tag="' + esc(t) + '" aria-pressed="false">' + esc(prettyTag(t)) + '</button>';
+    }).join('');
+    Array.prototype.forEach.call(chipsEl.querySelectorAll('.chip'), function(btn){
+      btn.addEventListener('click', function(){ onTagClick(btn.getAttribute('data-tag')); });
+    });
+  }
+
+  function setColophon(){
+    var el = document.getElementById('colophon');
+    if(el) el.textContent = ENTRIES.length + ' statements · sources linked · nothing paraphrased';
+  }
+
+  function showNotice(html){
+    recordEl.querySelector('.wrap').innerHTML = '<div class="notice">' + html + '</div>';
+  }
+
+  function start(){
+    if(!ENTRIES.length){
+      showNotice('<h1>No statements yet.</h1><p>Add entries to <code>quotes.json</code> and they’ll appear here.</p>');
+      return;
+    }
+    buildChips();
+    setColophon();
+
+    var params = new URLSearchParams(location.search);
+    var qid = params.get('q');
+    var hashTag = decodeURIComponent((location.hash || '').replace(/^#/, '')) || null;
+    if(hashTag && tagExists(hashTag)) setTag(hashTag);
+
+    var entry = null;
+    if(qid){ entry = ENTRIES.filter(function(e){ return e.id === qid; })[0] || null; }
+    if(!entry) entry = pickRandom();
+    show(entry);
+
+    document.getElementById('random').addEventListener('click', function(){ show(pickRandom()); });
+
+    document.getElementById('browse-all').addEventListener('click', function(){
+      setTag(null);
+      show(pickRandom());
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    document.getElementById('home').addEventListener('click', function(ev){
+      ev.preventDefault();
+      setTag(null);
+      show(pickRandom());
+    });
+
+    document.addEventListener('keydown', function(ev){
+      var t = ev.target && ev.target.tagName;
+      if(t === 'INPUT' || t === 'TEXTAREA') return;
+      if(ev.key === 'r' || ev.key === 'R' || ev.key === 'ArrowRight'){
+        show(pickRandom());
+      }
+    });
+  }
+
+  function init(){
+    fetch('quotes.json', { cache: 'no-cache' })
+      .then(function(res){
+        if(!res.ok) throw new Error('HTTP ' + res.status);
+        return res.json();
+      })
+      .then(function(data){
+        ENTRIES = Array.isArray(data) ? data : (data && Array.isArray(data.entries) ? data.entries : []);
+        start();
+      })
+      .catch(function(err){
+        showNotice(
+          '<h1>Couldn’t load the statements.</h1>'
+          + '<p>If you opened this file directly, your browser is blocking it from reading <code>quotes.json</code>. '
+          + 'Serve the folder over HTTP — e.g. <code>python3 -m http.server</code> — or deploy it, and reload.</p>'
+          + '<p style="font-size:13px;color:#999">' + esc(err && err.message ? err.message : err) + '</p>'
+        );
+      });
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', init);
+  } else {
+    init();
+  }
+})();
+</script>
+</body>
+</html>
