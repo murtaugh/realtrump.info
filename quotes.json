@@ -291,5 +291,23 @@
       "source_name": "Forbes",
       "date": "2026-03-25"
     }
+  },
+  {
+    "id": "elections-rigged",
+    "question": "Does Trump think our elections are run fairly?",
+    "quote": "The only way we're going to lose this election is if the election is rigged.",
+    "context": "At an August 2020 campaign event, about three months before he lost to Joe Biden.",
+    "source_url": "https://thehill.com/homenews/administration/512424-trump-the-only-way-we-are-going-to-lose-this-election-is-if-the/",
+    "source_name": "The Hill",
+    "date": "2020-08-17",
+    "tags": ["elections"],
+    "emphasis": "quote",
+    "note": {
+      "label": "The tell",
+      "text": "He lost that election, <strong>then called it stolen</strong> — a claim rejected by recounts, the courts, and his own attorney general, who found no meaningful fraud. He recycled the warning in 2024, urging supporters to make his win \"too big to rig.\" Then he won — and voiced no such complaint about the election he'd just won.",
+      "source_url": "https://whyy.org/articles/donald-trump-election-lies-2024-election-challenge/",
+      "source_name": "The Associated Press",
+      "date": "2024-11-02"
+    }
   }
 ]
