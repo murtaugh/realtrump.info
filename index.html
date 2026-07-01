@@ -64,7 +64,7 @@
   @keyframes rise{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
 
   .question{margin:0;font-weight:400;line-height:1.15;color:var(--ink);text-wrap:balance;}
-  .quote{margin:0;font-weight:800;letter-spacing:-0.015em;line-height:1.13;color:var(--ink);}
+  .quote{margin:0;font-weight:800;letter-spacing:-0.015em;line-height:1.13;color:var(--ink);cursor:pointer;}
   /* The quote always carries hanging quotation marks; -0.5em ~= the curly quote's width, tune if needed. */
   .quote p{margin:0;quotes:"\201C" "\201D";text-indent:-0.5em;text-wrap:balance;}
   .quote p::before{content:open-quote;}
@@ -77,6 +77,14 @@
     transition:border-color .15s ease,color .15s ease;
   }
   a.source-link:hover{color:var(--ink);border-bottom-color:var(--ink);}
+  /* Always-on light underline under the date so links are distinguishable without
+     relying on hover/color alone. The dark hover underline (above) still applies. */
+  .src-date{
+    text-decoration:underline;
+    text-decoration-color:var(--hair);
+    text-decoration-thickness:1px;
+    text-underline-offset:2px;
+  }
 
   /* "Worth noting" — the site's own editorial follow-up after a quote, with its own source. */
   .note{margin:22px 0 0;padding-top:16px;border-top:1px solid var(--hair);max-width:54ch;}
@@ -336,7 +344,7 @@
 
   function sourceLine(name, url, date){
     var dateStr = formatDate(date);
-    var inner = 'Source &middot; ' + esc(name || 'Source') + (dateStr ? (' &middot; ' + dateStr) : '') + ' &#8599;';
+    var inner = 'Source &middot; ' + esc(name || 'Source') + (dateStr ? (' &middot; <span class="src-date">' + dateStr + '</span>') : '') + ' &#8599;';
     return isHttp(url)
       ? '<a class="source-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
       : '<span class="source-link">' + inner + '</span>';
@@ -483,6 +491,14 @@
     show(entry);
 
     document.getElementById('random').addEventListener('click', function(){ show(pickRandom()); });
+
+    // The whole quote is a click target for the next random pick (mirrors the
+    // Random button / "r" key). Ignore clicks on links inside it.
+    recordEl.addEventListener('click', function(ev){
+      var t = ev.target;
+      if(t.closest && t.closest('a')) return;
+      if(t.closest && t.closest('.quote')) show(pickRandom());
+    });
 
     document.getElementById('browse-all').addEventListener('click', function(){
       setTag(null);
