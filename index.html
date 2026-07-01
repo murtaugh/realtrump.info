@@ -78,6 +78,12 @@
   }
   a.source-link:hover{color:var(--ink);border-bottom-color:var(--ink);}
 
+  /* "Worth noting" — the site's own editorial follow-up after a quote, with its own source. */
+  .note{margin:22px 0 0;padding-top:16px;border-top:1px solid var(--hair);max-width:54ch;}
+  .note-label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin:0 0 5px;}
+  .note-body{margin:0;font-size:14px;line-height:1.55;color:var(--muted);}
+  .note-source{margin:7px 0 0;}
+
   /* Emphasis = SIZE only. The quote is always bold with hanging marks (set above);
      the question is the lighter framing in both modes. */
   /* QUESTION leads — large question up top, bold quote beneath */
@@ -166,7 +172,7 @@
     .mode-question .question,.mode-quote .quote{font-size:clamp(32px,3.2vw,44px);}
     .mode-question .quote{font-size:clamp(21px,1.8vw,24px);}
     .mode-quote .question{font-size:17px;}
-    .context,.source-link{font-size:15px;}
+    .context,.source-link,.note-body{font-size:15px;}
   }
   @media (min-width:1600px){
     .masthead{font-size:30px;}
@@ -231,8 +237,16 @@
     "source_name": "Reuters",                 // publisher / outlet
     "date":        "2024-09-15",              // ISO 8601 (YYYY-MM-DD)
     "tags":        ["housing","economy"],     // lowercase slugs; drive the filter chips
-    "emphasis":    "quote"                    // optional: "quote" | "question".
+    "emphasis":    "quote",                   // optional: "quote" | "question".
+    "note": {                                 // optional editorial follow-up shown after the quote
+      "label":       "Since then",            //   optional; defaults to "Worth noting"
+      "text":        "As of today, ... up X%.",
+      "source_url":  "https://...",           //   the note's own source (separate from the quote's)
+      "source_name": "AAA",
+      "date":        "2026-06-30"
+    }
   }                                           // omit emphasis to auto-pick by quote length.
+                                              // note may also be a plain string, or an array of notes.
 
   URLs:  ?q=slug   -> a specific statement (deep link)
          #tag      -> filtered to a topic (Random draws from that topic)
@@ -243,6 +257,7 @@
   "use strict";
 
   var QUOTE_LEADS_MAX = 80; // when "emphasis" is omitted, quotes shorter than this lead.
+  var NOTE_LABEL = 'Worth noting'; // default label for an entry's editorial follow-up
   var ENTRIES = [];
   var activeTag = null;
   var current = null;
@@ -297,19 +312,45 @@
     return pick;
   }
 
+  function sourceLine(name, url, date){
+    var dateStr = formatDate(date);
+    var inner = 'Source &middot; ' + esc(name || 'Source') + (dateStr ? (' &middot; ' + dateStr) : '') + ' &#8599;';
+    return isHttp(url)
+      ? '<a class="source-link" href="' + esc(url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
+      : '<span class="source-link">' + inner + '</span>';
+  }
+
+  // A "note" may be a string, an object {label?, text, source_url?, source_name?, date?},
+  // or an array of those. Normalize to a list of objects.
+  function notesOf(e){
+    var n = e.note;
+    if(!n) return [];
+    if(!Array.isArray(n)) n = [n];
+    return n.map(function(x){ return (typeof x === 'string') ? { text: x } : x; })
+            .filter(function(x){ return x && x.text; });
+  }
+  function noteHTML(n){
+    var src = (n.source_url || n.source_name)
+      ? '<p class="note-source">' + sourceLine(n.source_name, n.source_url, n.date) + '</p>'
+      : '';
+    return '<aside class="note">'
+      + '<span class="note-label">' + esc(n.label || NOTE_LABEL) + '</span>'
+      + '<p class="note-body">' + richText(n.text) + '</p>'
+      + src
+      + '</aside>';
+  }
+
   function entryHTML(e){
     var mode = emphasisOf(e);
-    var dateStr = formatDate(e.date);
-    var inner = 'Source &middot; ' + esc(e.source_name || 'Unknown') + (dateStr ? (' &middot; ' + dateStr) : '') + ' &#8599;';
-    var src = isHttp(e.source_url)
-      ? '<a class="source-link" href="' + esc(e.source_url) + '" target="_blank" rel="noopener noreferrer">' + inner + '</a>'
-      : '<span class="source-link">' + inner + '</span>';
+    var src = sourceLine(e.source_name || 'Unknown', e.source_url, e.date);
     var ctx = e.context ? '<p class="context">' + richText(e.context) + '</p>' : '';
+    var notes = notesOf(e).map(noteHTML).join('');
     return '<article class="entry mode-' + mode + '">'
       + '<h1 class="question">' + richText(e.question) + '</h1>'
       + '<blockquote class="quote"><p>' + richText(e.quote) + '</p></blockquote>'
       + ctx
       + '<p class="source">' + src + '</p>'
+      + notes
       + '</article>';
   }
 
