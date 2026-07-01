@@ -85,7 +85,14 @@
     "date": "2024-09-10",
     "tags": [
       "healthcare"
-    ]
+    ],
+    "note": {
+      "label": "Since then",
+      "text": "The concepts never became a plan. Instead, the Republican-led Congress let the ACA's enhanced premium tax credits lapse at the end of 2025 without passing any replacement, causing average premiums to more than double — up roughly 114%, about $1,016 a year. Marketplace enrollment is projected to fall from 22.3 million in 2025 to about 17.5 million in 2026, and a KFF survey found that 9% of 2025 enrollees had already become uninsured.",
+      "source_url": "https://www.kff.org/affordable-care-act/what-we-know-so-far-about-2026-aca-marketplace-enrollment-premiums-and-deductibles/",
+      "source_name": "KFF",
+      "date": "2026-05-19"
+    }
   },
   {
     "id": "iran-financial-situation",
