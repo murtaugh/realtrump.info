@@ -100,7 +100,7 @@
   },
   {
     "id": "healthcare-concepts",
-    "question": "What is Trump's plan to replace the Affordable Care Act?",
+    "question": "Does Trump have a plan to replace the Affordable Care Act?",
     "quote": "I have <strong>concepts</strong> of a plan.",
     "context": "Answering a debate question in September 2024 about whether he had a plan to replace the ACA.",
     "source_url": "https://thehill.com/policy/healthcare/4873254-trump-debate-obamacare-replacement/",
@@ -203,7 +203,7 @@
     "question": "Is Trump looking forward to the 2026 midterm elections?",
     "quote": "When you think of it, <strong>we shouldn't even have an election</strong>.",
     "context": "Said in a January 2026 Oval Office interview with Reuters, while complaining that the president's party usually loses seats in the midterms.",
-    "source_url": "",
+    "source_url": "https://www.ibtimes.com/trump-fears-midterm-defeat-while-insisting-us-shouldnt-even-have-election-2026-voting-cycle-3795419",
     "source_name": "Reuters",
     "date": "2026-01-14",
     "tags": [
@@ -244,7 +244,7 @@
     "question": "What does Trump think about wind power?",
     "quote": "They say <strong>the noise causes cancer</strong>.",
     "context": "Railing against wind turbines — which he calls 'windmills' — at a National Republican Congressional Committee dinner in April 2019, alongside claims they tank property values and slaughter birds.",
-    "source_url": "https://www.c-span.org/clip/white-house-event/user-clip-trump-windmills-cause-cancer/4789848",
+    "source_url": "https://www.motherjones.com/politics/2024/10/donald-trump-wind-turnbines-energy-cancer/",
     "source_name": "C-SPAN",
     "date": "2019-04-02",
     "tags": [
