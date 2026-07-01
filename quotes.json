@@ -1,7 +1,7 @@
 [
   {
     "id": "housing-prices",
-    "question": "What does Trump say about home prices?",
+    "question": "What are Trump's goals for affordable housing?",
     "quote": "I want to <strong>drive housing prices up</strong> for people who own homes.",
     "context": "At the World Economic Forum in Davos, January 2026.",
     "source_url": "https://www.pbs.org/newshour/politics/watch-trump-says-he-wants-to-drive-housing-prices-up-not-down",
@@ -15,7 +15,7 @@
   },
   {
     "id": "tariffs-beautiful-word",
-    "question": "What does Trump think of tariffs?",
+    "question": "How does Trump feel about tariffs?",
     "quote": "I always say 'tariffs' is the most beautiful word to me in the dictionary.",
     "context": "After his second inauguration, January 2025, arguing tariffs would make the country rich.",
     "source_url": "https://www.npr.org/2025/04/09/nx-s1-5355661/tariffs-history-meaning",
@@ -47,7 +47,7 @@
     ],
     "note": {
       "label": "Since then",
-      "text": "He framed this as a way to bring energy prices down. As of June 30, 2026, AAA's national average for regular gas was about $3.85 a gallon — up roughly 24% from around $3.12 when he took office in January 2025.",
+      "text": "He framed this as a way to bring energy prices down but as of June 30, 2026, AAA's national average for regular gas was about $3.85 a gallon — up roughly 24% from around $3.12 when he took office in January 2025.",
       "source_url": "https://gasprices.aaa.com/",
       "source_name": "AAA",
       "date": "2026-06-30"
@@ -55,9 +55,9 @@
   },
   {
     "id": "nato-delinquent",
-    "question": "What did Trump when asked about defending NATO allies?",
+    "question": "What did Trump say when asked about defending NATO allies?",
     "quote": "No, I would not protect you.",
-    "context": "At a February 2024 rally in Conway, S.C., recounting telling a NATO ally he deemed 'delinquent' that he would not protect it from Russia.",
+    "context": "At a February 2024 rally in Conway, SC, recounting telling a NATO ally he deemed 'delinquent' that he would not protect it from Russia.",
     "source_url": "https://www.npr.org/2024/02/11/1230658309/trump-would-encourage-russia-to-attack-nato-allies-who-dont-pay-bills",
     "source_name": "NPR",
     "date": "2024-02-10",
@@ -69,7 +69,7 @@
     "id": "immigration-poisoning-blood",
     "question": "What does Trump say about immigrants?",
     "quote": "They're poisoning the blood of our country.",
-    "context": "At a December 2023 rally in Durham, N.H.",
+    "context": "At a December 2023 rally in Durham, NH",
     "source_url": "https://www.c-span.org/clip/campaign-2024/donald-trump-on-illegal-immigrants-poisoning-the-blood-of-our-country/5098439",
     "source_name": "C-SPAN",
     "date": "2023-12-16",
@@ -78,7 +78,7 @@
   {
     "id": "healthcare-concepts",
     "question": "What is Trump's plan to replace the Affordable Care Act?",
-    "quote": "I have concepts of a plan.",
+    "quote": "I have <strong>concepts</strong> of a plan.",
     "context": "Answering a debate question in September 2024 about whether he had a plan to replace the ACA.",
     "source_url": "https://thehill.com/policy/healthcare/4873254-trump-debate-obamacare-replacement/",
     "source_name": "The Hill",
@@ -89,7 +89,7 @@
     "emphasis": "question",
     "note": {
       "label": "Since then",
-      "text": "The concepts never became a plan. Instead, the Republican-led Congress let the ACA's enhanced premium tax credits lapse at the end of 2025 without passing any replacement, causing average premiums to more than double — up roughly 114%, about $1,016 a year. Marketplace enrollment is projected to fall from 22.3 million in 2025 to about 17.5 million in 2026, and a KFF survey found that 9% of 2025 enrollees had already become uninsured.",
+      "text": "The concepts never became a plan. Instead, the Republican-led Congress let the ACA's tax credits lapse without a replacement, causing average premiums to more than double — up roughly 114%, about $1,016 a year. Marketplace enrollment is projected to fall from 22.3 million in 2025 to about 17.5 million in 2026, and a KFF survey found that 9% of 2025 enrollees had already become uninsured.",
       "source_url": "https://www.kff.org/affordable-care-act/what-we-know-so-far-about-2026-aca-marketplace-enrollment-premiums-and-deductibles/",
       "source_name": "KFF",
       "date": "2026-05-19"
@@ -97,7 +97,7 @@
   },
   {
     "id": "iran-financial-situation",
-    "question": "Does Trump weigh Americans' finances when negotiating with Iran?",
+    "question": "Does Trump think about the finanical situation of Americans?",
     "quote": "I don't think about Americans' financial situation.",
     "context": "Asked on the White House lawn on May 12, 2026 whether Americans' financial strain during the Iran war was motivating a deal.",
     "source_url": "https://www.c-span.org/clip/white-house-event/president-trump-i-dont-think-about-americans-financial-situation-amid-iran-talks/5200218",
@@ -110,7 +110,7 @@
   },
   {
     "id": "constitution-termination",
-    "question": "What has Trump said about the Constitution?",
+    "question": "How does Trump feel about the Constitution?",
     "quote": "A Massive Fraud of this type and magnitude allows for the termination of all rules, regulations, and articles, even those found in the Constitution.",
     "context": "In a December 2022 Truth Social post pushing his false 2020-election-fraud claims, arguing they justified throwing out the results or holding a new election.",
     "source_url": "https://www.cnn.com/2022/12/03/politics/trump-constitution-truth-social",
@@ -119,7 +119,7 @@
     "tags": ["elections"],
     "emphasis": "question",
     "note": {
-      "text": "He later denied he meant to \u201cterminate\u201d the Constitution, calling that framing \u201cdisinformation\u201d \u2014 but the verbatim post reads as quoted.",
+      "text": "He later denied he meant to \u201cterminate\u201d the Constitution, calling that framing \u201cdisinformation\u201d \u2014 but his actual post reads as quoted.",
       "source_url": "https://www.snopes.com/fact-check/trump-termination-us-constitution/",
       "source_name": "Snopes",
       "date": "2022-12-05"
@@ -127,13 +127,31 @@
   },
   {
     "id": "guns-due-process",
-    "question": "What does Trump say about guns and due process?",
+    "question": "How would Trump solve the gun crisis in America?",
     "quote": "Take the guns first, go through due process second.",
     "context": "At a February 2018 White House meeting on school safety after the Parkland shooting, endorsing taking firearms from people deemed dangerous before any court review.",
     "source_url": "https://www.c-span.org/clip/white-house-event/user-clip-donald-trump-take-the-guns-first-go-through-due-process-second/4717030",
     "source_name": "C-SPAN",
     "date": "2018-02-28",
     "tags": ["guns"]
+  },
+  {
+    "id": "immigration-due-process",
+    "question": "Does Trump understand due process?",
+    "quote": "I don't know. I'm not a lawyer. I don't know.",
+    "context": "Asked on Meet the Press whether he agreed with Secretary of State Marco Rubio that everyone in the U.S. is entitled to due process — a right the Fifth Amendment extends to all 'persons,' not only citizens.",
+    "source_url": "https://www.pbs.org/newshour/show/what-the-constitution-says-about-noncitizens-rights-as-trump-doubts-need-for-due-process",
+    "source_name": "NBC News, Meet the Press",
+    "date": "2025-05-04",
+    "tags": ["immigration"],
+    "emphasis": "question",
+    "note": {
+      "label": "Moments later",
+      "text": "Pressed on whether he needs to uphold the Constitution as president, Trump again answered, \"I don't know.\" The Supreme Court has held for over a century that the due process clause protects anyone in the United States, regardless of citizenship.",
+      "source_url": "https://www.pbs.org/newshour/show/what-the-constitution-says-about-noncitizens-rights-as-trump-doubts-need-for-due-process",
+      "source_name": "PBS NewsHour",
+      "date": "2025-05-06"
+    }
   },
   {
     "id": "authoritarianism-president-for-life",
