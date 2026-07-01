@@ -181,5 +181,23 @@
       "source_name": "TIME",
       "date": "2026-01-15"
     }
+  },
+  {
+    "id": "guns-did-nothing",
+    "question": "What has Trump done about gun violence?",
+    "quote": "We did nothing.",
+    "context": "Boasting to the NRA's Great American Outdoor Show in February 2024 that, despite heavy pressure to act on guns after mass shootings during his first term, he refused to enact any restrictions.",
+    "source_url": "https://www.voanews.com/a/trump-says-no-one-will-lay-a-finger-on-your-firearms-if-he-wins-/7482066.html",
+    "source_name": "VOA News",
+    "date": "2024-02-09",
+    "tags": ["guns"],
+    "emphasis": "quote",
+    "note": {
+      "label": "The pattern",
+      "text": "After the 2018 Parkland shooting killed 17 students and staff, Trump briefly embraced measures to restrict gun sales, then pivoted again amid intense NRA lobbying.",
+      "source_url": "https://www.cnn.com/2024/05/18/politics/trump-nra-convention-guns/index.html",
+      "source_name": "CNN",
+      "date": "2024-05-18"
+    }
   }
 ]
