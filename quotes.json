@@ -520,7 +520,7 @@
     "source_url": "https://www.npr.org/2019/07/14/741630889/congresswomen-denounce-trump-tweets-telling-them-to-go-back-to-their-home-countr",
     "source_name": "NPR",
     "date": "2019-07-14",
-    "tags": ["immigration"],
+    "tags": ["immigration","women"],
     "emphasis": "quote",
     "note": {
       "label": "For the record",
@@ -593,7 +593,8 @@
     "source_name": "New York Magazine",
     "date": "2002-10-28",
     "tags": [
-      "epstein"
+      "epstein",
+      "women"
     ],
     "emphasis": "quote",
     "note": {
