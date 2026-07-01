@@ -10,7 +10,7 @@
 <meta property="og:description" content="A verbatim, sourced record — one statement at a time, each linked to its original source.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-<link href="https://fonts.bunny.net/css?family=archivo:400,500,700,800&display=swap" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=archivo:300,400,500,700,800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#111111;
@@ -87,25 +87,31 @@
   /* Emphasis = SIZE only. The quote is always bold with hanging marks (set above);
      the question is the lighter framing in both modes. */
   /* QUESTION leads — large question up top, bold quote beneath */
-  .mode-question .question{font-size:clamp(24px, 4.6vw, 32px);line-height:1.1;letter-spacing:-0.015em;margin-bottom:18px;}
+  .mode-question .question{font-weight:300;font-size:clamp(24px, 4.6vw, 32px);line-height:1.1;letter-spacing:-0.015em;margin-bottom:18px;}
   .mode-question .quote{font-size:clamp(19px, 2.4vw, 22px);line-height:1.3;max-width:54ch;}
 
   /* QUOTE leads — quote goes big, question a quiet standfirst above */
   .mode-quote .question{font-size:15px;line-height:1.4;color:var(--muted);margin-bottom:14px;max-width:54ch;}
   .mode-quote .quote{font-size:clamp(24px, 4.6vw, 32px);}
 
-  /* <strong> = underline emphasis (keeps the surrounding weight) rather than extra boldness. */
+  /* <strong> = underline emphasis (keeps the surrounding weight) rather than extra boldness.
+     The line is continuous, but a paper-colored halo around the glyphs knocks it out where
+     descenders cross it, so the underline appears to fall behind the text. */
   .question strong, .question b,
   .quote strong, .quote b,
-  .context strong, .context b{
+  .context strong, .context b,
+  .note-body strong, .note-body b{
     font-weight:inherit;
     text-decoration:underline;
     text-decoration-thickness:.055em;
     text-underline-offset:.14em;
+    text-decoration-skip-ink:none;
+    text-shadow:.03em 0 var(--paper), -.03em 0 var(--paper), .06em 0 var(--paper), -.06em 0 var(--paper);
   }
   .question em, .question i,
   .quote em, .quote i,
-  .context em, .context i{font-style:italic;}
+  .context em, .context i,
+  .note-body em, .note-body i{font-style:italic;}
 
   /* Filter bar pinned to the bottom of the hero */
   .filter-bar{flex:0 0 auto;padding-bottom:var(--pad-y);padding-top:16px;}
