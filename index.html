@@ -498,17 +498,6 @@
     recordEl.querySelector('.wrap').innerHTML = '<div class="notice">' + html + '</div>';
   }
 
-  function navType(){
-    try {
-      var nav = performance.getEntriesByType('navigation')[0];
-      if(nav && nav.type) return nav.type;
-    } catch(_){}
-    try {
-      if(performance.navigation) return ['navigate','reload','back_forward'][performance.navigation.type] || 'navigate';
-    } catch(_){}
-    return 'navigate';
-  }
-
   function start(){
     if(!ENTRIES.length){
       showNotice('<h1>No statements yet.</h1><p>Add entries to <code>quotes.json</code> and they\u2019ll appear here.</p>');
@@ -522,11 +511,11 @@
     var hashTag = decodeURIComponent((location.hash || '').replace(/^#/, '')) || null;
     if(hashTag && tagExists(hashTag)) setTag(hashTag);
 
-    // Honor a ?q= permalink only when the visitor actually navigated to it.
-    // On a reload, ignore it and draw a fresh random pick so refresh = new quote.
-    // A #tag landing (no ?q=) opens on a random quote from that topic.
+    // The on-screen quote always matches the URL: a ?q= permalink pins that exact
+    // quote (including on refresh). Only draw a random pick when there's no ?q=;
+    // a #tag landing (no ?q=) opens on a random quote from that topic.
     var entry = null;
-    if(qid && navType() !== 'reload'){ entry = ENTRIES.filter(function(e){ return e.id === qid; })[0] || null; }
+    if(qid){ entry = ENTRIES.filter(function(e){ return e.id === qid; })[0] || null; }
     if(!entry) entry = pickRandom(activeTag ? entriesWithTag(activeTag) : ENTRIES);
     show(entry, true);
 
