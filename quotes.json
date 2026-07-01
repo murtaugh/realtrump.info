@@ -11,7 +11,14 @@
       "housing",
       "economy"
     ],
-    "emphasis": "question"
+    "emphasis": "question",
+    "note": {
+      "label": "Since then",
+      "text": "In June 2026, Congress passed a landmark bipartisan bill to lower housing costs with veto-proof majorities. <strong>Trump refused to sign it</strong> — canceling the signing ceremony and dismissing the bill as \"of minor importance\" — to pressure lawmakers into first passing an unrelated voting bill, the SAVE Act. Lawmakers expect it to become law over his objection anyway.",
+      "source_url": "https://www.nbcnews.com/politics/donald-trump/trump-cancels-plan-sign-major-housing-bill-fights-congress-act-rcna351558",
+      "source_name": "NBC News",
+      "date": "2026-06-24"
+    }
   },
   {
     "id": "tariffs-beautiful-word",
