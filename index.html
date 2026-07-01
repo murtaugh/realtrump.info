@@ -82,7 +82,9 @@
   /* Emphasis: QUOTE leads — small standfirst question, quote goes big */
   .mode-quote .question{font-size:15px;font-weight:500;line-height:1.4;color:var(--muted);margin-bottom:14px;}
   .mode-quote .quote{font-size:clamp(24px, 4.6vw, 32px);line-height:1.13;letter-spacing:-0.015em;font-weight:800;color:var(--ink);}
-  .mode-quote .quote p{quotes:"\201C" "\201D";}
+  /* Hang the opening quote mark into the margin so the text aligns flush left.
+     -0.5em ~= width of the curly double-quote in Archivo; tune if needed. */
+  .mode-quote .quote p{quotes:"\201C" "\201D";text-indent:-0.5em;}
   .mode-quote .quote p::before{content:open-quote;}
   .mode-quote .quote p::after{content:close-quote;}
 
@@ -142,6 +144,24 @@
     .mode-quote .question{font-size:14px;}
     .filter-row{flex-direction:column;align-items:stretch;}
     .rnd{margin-left:0;margin-top:12px;width:100%;text-align:center;}
+  }
+
+  /* Scale up on large screens: wider column, bigger type */
+  @media (min-width:1200px){
+    :root{--maxw:1040px;--pad-x:clamp(32px,5vw,72px);}
+    .masthead{font-size:26px;}
+    .mode-question .question,.mode-quote .quote{font-size:clamp(34px,3.2vw,48px);}
+    .mode-question .quote{font-size:clamp(19px,1.7vw,22px);}
+    .mode-quote .question{font-size:17px;}
+    .context{font-size:15px;}
+    .source-link{font-size:13px;}
+  }
+  @media (min-width:1600px){
+    :root{--maxw:1200px;}
+    .masthead{font-size:30px;}
+    .mode-question .question,.mode-quote .quote{font-size:clamp(48px,3vw,58px);}
+    .mode-question .quote{font-size:24px;}
+    .mode-quote .question{font-size:19px;}
   }
 
   @media (prefers-reduced-motion:reduce){
@@ -285,7 +305,7 @@
     if(!e){ return; }
     current = e;
     recordEl.querySelector('.wrap').innerHTML = entryHTML(e);
-    document.title = e.question + ' — In his words.';
+    document.title = e.question + ' \u2014 In his words.';
     syncURL(e);
   }
 
@@ -324,16 +344,27 @@
 
   function setColophon(){
     var el = document.getElementById('colophon');
-    if(el) el.textContent = ENTRIES.length + ' statements · sources linked · nothing paraphrased';
+    if(el) el.textContent = ENTRIES.length + ' statements \u00b7 sources linked \u00b7 nothing paraphrased';
   }
 
   function showNotice(html){
     recordEl.querySelector('.wrap').innerHTML = '<div class="notice">' + html + '</div>';
   }
 
+  function navType(){
+    try {
+      var nav = performance.getEntriesByType('navigation')[0];
+      if(nav && nav.type) return nav.type;
+    } catch(_){}
+    try {
+      if(performance.navigation) return ['navigate','reload','back_forward'][performance.navigation.type] || 'navigate';
+    } catch(_){}
+    return 'navigate';
+  }
+
   function start(){
     if(!ENTRIES.length){
-      showNotice('<h1>No statements yet.</h1><p>Add entries to <code>quotes.json</code> and they’ll appear here.</p>');
+      showNotice('<h1>No statements yet.</h1><p>Add entries to <code>quotes.json</code> and they\u2019ll appear here.</p>');
       return;
     }
     buildChips();
@@ -344,8 +375,10 @@
     var hashTag = decodeURIComponent((location.hash || '').replace(/^#/, '')) || null;
     if(hashTag && tagExists(hashTag)) setTag(hashTag);
 
+    // Honor a ?q= permalink only when the visitor actually navigated to it.
+    // On a reload, ignore it and draw a fresh random pick so refresh = new quote.
     var entry = null;
-    if(qid){ entry = ENTRIES.filter(function(e){ return e.id === qid; })[0] || null; }
+    if(qid && navType() !== 'reload'){ entry = ENTRIES.filter(function(e){ return e.id === qid; })[0] || null; }
     if(!entry) entry = pickRandom();
     show(entry);
 
@@ -384,9 +417,9 @@
       })
       .catch(function(err){
         showNotice(
-          '<h1>Couldn’t load the statements.</h1>'
+          '<h1>Couldn\u2019t load the statements.</h1>'
           + '<p>If you opened this file directly, your browser is blocking it from reading <code>quotes.json</code>. '
-          + 'Serve the folder over HTTP — e.g. <code>python3 -m http.server</code> — or deploy it, and reload.</p>'
+          + 'Serve the folder over HTTP \u2014 e.g. <code>python3 -m http.server</code> \u2014 or deploy it, and reload.</p>'
           + '<p style="font-size:13px;color:#999">' + esc(err && err.message ? err.message : err) + '</p>'
         );
       });
