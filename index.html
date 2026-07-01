@@ -10,7 +10,7 @@
 <meta property="og:description" content="A verbatim, sourced record — one statement at a time, each linked to its original source.">
 <meta property="og:type" content="website">
 <link rel="preconnect" href="https://fonts.bunny.net" crossorigin>
-<link href="https://fonts.bunny.net/css?family=archivo:400,500,700,800,900&display=swap" rel="stylesheet">
+<link href="https://fonts.bunny.net/css?family=archivo:400,500,700,800&display=swap" rel="stylesheet">
 <style>
   :root{
     --ink:#111111;
@@ -63,7 +63,7 @@
   .entry{animation:rise .26s ease both;}
   @keyframes rise{from{opacity:0;transform:translateY(5px);}to{opacity:1;transform:none;}}
 
-  .question{margin:0;font-weight:500;line-height:1.15;color:var(--ink);}
+  .question{margin:0;font-weight:400;line-height:1.15;color:var(--ink);}
   .quote{margin:0;font-weight:800;letter-spacing:-0.015em;line-height:1.13;color:var(--ink);}
   /* The quote always carries hanging quotation marks; -0.5em ~= the curly quote's width, tune if needed. */
   .quote p{margin:0;quotes:"\201C" "\201D";text-indent:-0.5em;}
@@ -88,11 +88,15 @@
   .mode-quote .question{font-size:15px;line-height:1.4;color:var(--muted);margin-bottom:14px;max-width:54ch;}
   .mode-quote .quote{font-size:clamp(24px, 4.6vw, 32px);}
 
-  /* Inline emphasis inside the record text. <strong> uses Archivo's heaviest cut (900)
-     so it reads bolder even against the already-bold quote. */
+  /* <strong> = underline emphasis (keeps the surrounding weight) rather than extra boldness. */
   .question strong, .question b,
   .quote strong, .quote b,
-  .context strong, .context b{font-weight:900;}
+  .context strong, .context b{
+    font-weight:inherit;
+    text-decoration:underline;
+    text-decoration-thickness:.055em;
+    text-underline-offset:.14em;
+  }
   .question em, .question i,
   .quote em, .quote i,
   .context em, .context i{font-style:italic;}
