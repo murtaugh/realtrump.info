@@ -217,9 +217,9 @@
       </div>
     </main>
 
-    <nav class="filter-bar" aria-label="Filter by topic and shuffle">
+    <nav class="filter-bar" aria-label="Random quote by topic and shuffle">
       <div class="wrap">
-        <span class="filter-label" id="filter-label">Filter by topic</span>
+        <span class="filter-label" id="filter-label">Random by topic</span>
         <div class="filter-row">
           <div class="chips" id="chips" role="group" aria-label="Topics"></div>
           <button class="rnd" id="random" type="button"><span class="gly" aria-hidden="true">&#8635;</span>Random</button>
@@ -403,7 +403,9 @@
     reflectChips();
   }
   function onTagClick(tag){
-    setTag(activeTag === tag ? null : tag);
+    // Each tag is an action button: always draw a fresh random quote carrying
+    // that tag (not a toggle). Clicking the same tag again re-draws within it.
+    setTag(tag);
     show(pickRandom());
   }
 
