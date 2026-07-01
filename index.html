@@ -139,6 +139,9 @@
   }
   .chip:hover{border-color:var(--ink);}
   .chip.on{background:var(--ink);border-color:var(--ink);color:#fff;}
+  /* Per-tag count, dimmed so the topic name still leads. */
+  .chip-count{margin-left:6px;font-weight:400;color:var(--muted-2);font-variant-numeric:tabular-nums;}
+  .chip.on .chip-count{color:rgba(255,255,255,0.65);}
 
   /* Random is the primary action: it leads the block as a solid (filled) button,
      above the secondary topic chips. Same box size as a chip. */
@@ -465,7 +468,10 @@
       return counts[b] - counts[a] || a.localeCompare(b);
     });
     chipsEl.innerHTML = tags.map(function(t){
-      return '<button class="chip" type="button" data-tag="' + esc(t) + '" aria-pressed="false">' + esc(prettyTag(t)) + '</button>';
+      var n = counts[t];
+      var label = esc(prettyTag(t)) + ', ' + n + ' statement' + (n === 1 ? '' : 's');
+      return '<button class="chip" type="button" data-tag="' + esc(t) + '" aria-pressed="false" aria-label="' + label + '">'
+        + esc(prettyTag(t)) + '<span class="chip-count" aria-hidden="true">' + n + '</span></button>';
     }).join('');
     Array.prototype.forEach.call(chipsEl.querySelectorAll('.chip'), function(btn){
       btn.addEventListener('click', function(){ onTagClick(btn.getAttribute('data-tag')); });
