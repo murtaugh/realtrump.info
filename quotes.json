@@ -367,5 +367,221 @@
         "date": "2018-08-10"
       }
     ]
+  },
+  {
+    "id": "women-grab-them",
+    "question": "How does Trump talk about women?",
+    "quote": "When you're a star, they let you do it. <strong>You can do anything.</strong> Grab 'em by the pussy.",
+    "context": "Caught on a hot mic in September 2005, riding a bus to an Access Hollywood taping, bragging to host Billy Bush about kissing and grabbing women. The Washington Post published the recording in October 2016, weeks before the election.",
+    "source_url": "https://www.npr.org/2016/10/07/497087141/donald-trump-caught-on-tape-making-vulgar-remarks-about-women",
+    "source_name": "NPR",
+    "date": "2005-09-01",
+    "tags": ["women"],
+    "emphasis": "quote",
+    "note": {
+      "label": "Under oath",
+      "text": "Shown the tape during a 2022 deposition, Trump affirmed that stars can behave this way — \"historically, that's true with stars.\" Months later, a jury found him liable for sexually abusing writer E. Jean Carroll; the judge cited this recording in denying his request for a new trial.",
+      "source_url": "https://en.wikipedia.org/wiki/Donald_Trump_Access_Hollywood_tape",
+      "source_name": "Wikipedia",
+      "date": "2023-05-09"
+    }
+  },
+  {
+    "id": "covid-play-it-down",
+    "question": "How did Trump handle the coronavirus?",
+    "quote": "I wanted to always <strong>play it down</strong>. I still like playing it down, because I don't want to create a panic.",
+    "context": "Told to journalist Bob Woodward in a recorded March 19, 2020 phone call — Woodward taped 18 interviews with Trump's permission.",
+    "source_url": "https://www.npr.org/2020/09/10/911368698/trump-tells-woodward-he-deliberately-downplayed-coronavirus-threat",
+    "source_name": "NPR",
+    "date": "2020-03-19",
+    "tags": ["covid"],
+    "emphasis": "quote",
+    "note": {
+      "label": "What he knew",
+      "text": "On Feb. 7, Trump told Woodward the virus was \"deadly stuff\" and roughly five times more lethal than the flu — yet kept likening it to the flu in public for weeks. Experts said <strong>a decisive early response could have saved thousands of lives</strong>.",
+      "source_url": "https://www.cnn.com/2020/09/09/politics/bob-woodward-rage-book-trump-coronavirus/index.html",
+      "source_name": "CNN",
+      "date": "2020-09-09"
+    }
+  },
+  {
+    "id": "democracy-vermin",
+    "question": "How does Trump describe his political opponents?",
+    "quote": "We will root out the communists, Marxists, fascists, and the <strong>radical left thugs that live like vermin</strong> within the confines of our country.",
+    "context": "At a Veterans Day rally in Claremont, NH, on Nov. 11, 2023, and in a Truth Social post the same day. He added that the \"threat from within\" was more dangerous than any foreign adversary.",
+    "source_url": "https://www.npr.org/2023/11/17/1213746885/trump-vermin-hitler-immigration-authoritarian-republican-primary",
+    "source_name": "NPR",
+    "date": "2023-11-11",
+    "tags": ["democracy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "Who else said it?",
+      "text": "\"Vermin\" was a favored term of Nazi propaganda, which cast Jews as disease-spreading parasites.",
+      "source_url": "https://www.forbes.com/sites/saradorn/2023/11/12/trump-compares-political-foes-to-vermin-on-veterans-day-echoing-nazi-propaganda/",
+      "source_name": "Forbes",
+      "date": "2023-11-12"
+    }
+  },
+  {
+    "id": "putin-helsinki",
+    "question": "Does Trump trust Putin over U.S. intelligence agencies?",
+    "quote": "I have President Putin. He just said it's not Russia. I will say this: <strong>I don't see any reason why it would be.</strong>",
+    "context": "At a joint press conference with Vladimir Putin in Helsinki on July 16, 2018, asked whether he believed U.S. intelligence agencies or Putin about Russian interference in the 2016 election — three days after Robert Mueller indicted 12 Russian military officers for that interference.",
+    "source_url": "https://www.npr.org/2018/07/17/629601233/trumps-helsinki-bow-to-putin-leaves-world-wondering-whats-up",
+    "source_name": "NPR",
+    "date": "2018-07-16",
+    "tags": ["foreign-policy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "His walkback",
+      "text": "The next day, Trump claimed he'd misspoken — that he meant \"wouldn't\" instead of \"would.\" Republican Sen. John McCain called the Helsinki performance one of the most disgraceful \"by an American president in memory.\"",
+      "source_url": "https://www.nbcnews.com/politics/politics-news/24-hours-later-trump-claims-he-misspoke-helsinki-meant-say-n892166",
+      "source_name": "NBC News",
+      "date": "2018-07-17"
+    }
+  },
+  {
+    "id": "veterans-mccain",
+    "question": "What does Trump think of prisoners of war?",
+    "quote": "He's not a war hero. He's a war hero because he was captured. <strong>I like people that weren't captured.</strong>",
+    "context": "At the Family Leadership Summit in Ames, Iowa, on July 18, 2015, after the moderator noted that Sen. John McCain — held as a prisoner of war for five and a half years in Vietnam — was a war hero.",
+    "source_url": "https://www.npr.org/2015/07/20/424571396/trump-takes-a-shot-at-john-mccain-and-republicans-push-back",
+    "source_name": "NPR",
+    "date": "2015-07-18",
+    "tags": ["veterans"],
+    "emphasis": "quote",
+    "note": {
+      "label": "His own record",
+      "text": "Trump did not serve in Vietnam. He received four student draft deferments during the 1960s and a fifth, medical deferment for bone spurs in his heels.",
+      "source_url": "https://www.thedailybeast.com/trump-mccain-is-not-a-war-hero/",
+      "source_name": "The Daily Beast",
+      "date": "2015-07-18"
+    }
+  },
+  {
+    "id": "fifth-avenue-shoot",
+    "question": "Does Trump fear repercussions for anything he's done?",
+    "quote": "I could stand in the middle of Fifth Avenue and <strong>shoot somebody</strong>, and I wouldn't lose any voters.",
+    "context": "At a campaign rally at Dordt College in Sioux Center, Iowa, on Jan. 23, 2016, boasting about the loyalty of his supporters. He mimed firing a gun as the crowd laughed.",
+    "source_url": "https://www.npr.org/sections/thetwo-way/2016/01/23/464129029/donald-trump-i-could-shoot-somebody-and-i-wouldnt-lose-any-voters",
+    "source_name": "NPR",
+    "date": "2016-01-23",
+    "tags": ["democracy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "The theory, tested",
+      "text": "In 2024, arguing for presidential immunity before a federal appeals court, Trump's own lawyer contended that a president could order the military to assassinate a political rival and face no prosecution unless first impeached and convicted by the Senate.",
+      "source_url": "https://www.axios.com/2024/01/10/trump-immunity-hearing-court-case-5th-avenue-quote",
+      "source_name": "Axios",
+      "date": "2024-01-10"
+    }
+  },
+  {
+    "id": "press-enemy-of-the-people",
+    "question": "How does Trump view the free press?",
+    "quote": "The FAKE NEWS media ... is not my enemy, <strong>it is the enemy of the American People</strong>!",
+    "context": "Posted on Twitter on Feb. 17, 2017 — naming The New York Times, NBC, ABC, CBS and CNN — the day after a combative White House press conference. He has repeated the phrase hundreds of times since.",
+    "source_url": "https://www.npr.org/2017/02/17/515630467/with-fake-news-trump-moves-from-alternative-facts-to-alternative-language",
+    "source_name": "NPR",
+    "date": "2017-02-17",
+    "tags": ["press", "democracy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "Who else said it?",
+      "text": "\"Enemy of the people\" was a signature phrase of Soviet and Nazi propaganda, used to mark groups for persecution — a parallel the New York Times drew. Asked in 2019 whether supporters might read it as license for violence against reporters, Trump said he hoped they would \"take my words to heart.\"",
+      "source_url": "https://en.wikipedia.org/wiki/Donald_Trump's_conflict_with_the_news_media",
+      "source_name": "Wikipedia",
+      "date": "2019-08-01"
+    }
+  },
+  {
+    "id": "immigration-muslim-shutdown",
+    "question": "What did Trump propose for Muslims entering the U.S.?",
+    "quote": "Donald J. Trump is calling for a <strong>total and complete shutdown of Muslims entering the United States</strong> until our country's representatives can figure out what is going on.",
+    "context": "A campaign statement issued Dec. 7, 2015, days after the San Bernardino shooting, and read aloud at a rally in Mount Pleasant, SC. Asked whether the ban would include U.S.-citizen Muslims abroad, his campaign said, \"Everyone.\"",
+    "source_url": "https://www.presidency.ucsb.edu/documents/statement-donald-j-trump-statement-preventing-muslim-immigration",
+    "source_name": "The American Presidency Project",
+    "date": "2015-12-07",
+    "tags": ["immigration"],
+    "emphasis": "quote",
+    "note": {
+      "label": "Since then",
+      "text": "Once elected, Trump's team rebranded the policy: his press secretary insisted it was a \"travel ban,\" not a Muslim ban, and the 2015 statement was quietly deleted from Trump's campaign website.",
+      "source_url": "https://www.cnbc.com/2017/05/08/trump-website-takes-down-muslim-ban-statement-after-reporter-grills-spicer-in-briefing.html",
+      "source_name": "CNBC",
+      "date": "2017-05-08"
+    }
+  },
+  {
+    "id": "congresswomen-go-back",
+    "question": "Does Tump respect the elected women and immigrants in office?",
+    "quote": "Why don't they <strong>go back</strong> and help fix the totally broken and crime infested places from which they came.",
+    "context": "Posted on Twitter on July 14, 2019, about four Democratic congresswomen of color known as \"the Squad.\" He doubled down after the tweets were widely condemned as racist.",
+    "source_url": "https://www.npr.org/2019/07/14/741630889/congresswomen-denounce-trump-tweets-telling-them-to-go-back-to-their-home-countr",
+    "source_name": "NPR",
+    "date": "2019-07-14",
+    "tags": ["immigration"],
+    "emphasis": "quote",
+    "note": {
+      "label": "For the record",
+      "text": "<strong>All four are U.S. citizens</strong>, and three were born in the United States. The fourth, Ilhan Omar, came from Somalia as a child and became a citizen as a teenager.",
+      "source_url": "https://www.cbsnews.com/news/donald-trump-racist-tweets-progressive-democratic-congresswomen-go-back-to-countries-nancy-pelosi-slam-president/",
+      "source_name": "CBS News",
+      "date": "2019-07-15"
+    }
+  },
+  {
+    "id": "authoritarianism-i-alone",
+    "question": "How modest is Trump about his own abilities?",
+    "quote": "Nobody knows the system better than me, which is why <strong>I alone can fix it.</strong>",
+    "context": "From his acceptance speech at the Republican National Convention on July 21, 2016. After cataloguing the nation's problems, he cast himself as the sole solution.",
+    "source_url": "https://www.presidency.ucsb.edu/documents/address-accepting-the-presidential-nomination-the-republican-national-convention-cleveland",
+    "source_name": "The American Presidency Project",
+    "date": "2016-07-21",
+    "tags": ["democracy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "Worth noting",
+      "text": "Historians flagged the novelty of a nominee presenting himself as the country's sole savior. The Atlantic's Yoni Appelbaum asked whether any American leader had ever claimed so directly to be the nation's \"sole hope for redemption.\"",
+      "source_url": "https://www.csmonitor.com/USA/Politics/Decoder/2016/0722/Trump-to-America-I-alone-can-fix-it",
+      "source_name": "The Christian Science Monitor",
+      "date": "2016-07-22"
+    }
+  },
+  {
+    "id": "jan6-fight-like-hell",
+    "question": "What did Trump tell the crowd before January 6?",
+    "quote": "We fight like hell. And <strong>if you don't fight like hell, you're not going to have a country anymore.</strong>",
+    "context": "From his speech at the Ellipse on Jan. 6, 2021, shortly before his supporters marched on the Capitol, as he repeated false claims that the 2020 election had been stolen.",
+    "source_url": "https://www.npr.org/2021/02/10/966396848/read-trumps-jan-6-speech-a-key-part-of-impeachment-trial",
+    "source_name": "NPR",
+    "date": "2021-01-06",
+    "tags": ["democracy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "His defense",
+      "text": "Defenders note he also told the crowd to march \"peacefully and patriotically.\" But he used \"fight\" some 20 times to that single mention of \"peacefully\" — a line his speechwriters added — and a federal judge rejected the defense, noting Trump told the crowd to fight like hell immediately before directing them to the Capitol.",
+      "source_url": "https://www.justsecurity.org/91904/dissecting-trumps-peacefully-and-patriotically-defense-of-the-january-6th-attack/",
+      "source_name": "Just Security",
+      "date": "2024-04-29"
+    }
+  },
+  {
+    "id": "covid-inject-disinfectant",
+    "question": "What did Trump suggest as a possible COVID treatment?",
+    "quote": "And is there a way we can do something like that, <strong>by injection inside</strong> or almost a cleaning. Because you see it gets in the lungs and it does a tremendous number on the lungs.",
+    "context": "At an April 23, 2020 White House briefing, after an official described how disinfectants and sunlight kill the virus on surfaces. Trump was speaking about disinfectant; he did not say \"bleach.\" The next day he claimed he had been \"sarcastic.\"",
+    "source_url": "https://www.factcheck.org/2020/04/the-white-house-spins-trumps-disinfectant-remarks/",
+    "source_name": "FactCheck.org",
+    "date": "2020-04-24",
+    "tags": ["covid"],
+    "emphasis": "quote",
+    "note": {
+      "label": "In context",
+      "text": "Fact-checkers stress that Trump did not literally instruct anyone to inject disinfectant, and he called it a \"sarcastic\" question the next day — though FactCheck.org and others found no sarcasm in the transcript.",
+      "source_url": "https://www.factcheck.org/2020/04/the-white-house-spins-trumps-disinfectant-remarks/",
+      "source_name": "FactCheck.org",
+      "date": "2020-04-24"
+    }
   }
 ]
