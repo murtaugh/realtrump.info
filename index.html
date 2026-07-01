@@ -156,6 +156,8 @@
   .site-footer{border-top:1px solid var(--hair);padding-block:clamp(28px,6vh,56px);}
   .footer-head{font-size:14px;font-weight:700;letter-spacing:0.04em;margin:0 0 8px;}
   .footer-body{font-size:14px;line-height:1.6;color:#444;margin:0 0 18px;max-width:46ch;}
+  .footer-body a{color:var(--ink);text-decoration:underline;text-underline-offset:2px;}
+  .footer-body a:hover{color:var(--muted);}
   .footer-links{display:flex;flex-wrap:wrap;gap:18px;margin-bottom:18px;}
   .footer-links a,.footer-links button{
     font-family:var(--font);font-size:12px;font-weight:500;letter-spacing:0.04em;
@@ -268,6 +270,7 @@
     <div class="wrap">
       <h2 class="footer-head">About this project</h2>
       <p class="footer-body">Every entry is a verbatim quote linked to its original source &mdash; a news report, transcript, or official record. Nothing here is paraphrased or summarized.</p>
+      <p class="footer-body">Claude helped build it, but this is a project from <a href="https://timmurtaugh.com">@murtaugh</a>. (Yes &mdash; I love and use em dashes, I&rsquo;m not going to let AI bully me off them.)</p>
       <div class="footer-links">
         <button type="button" id="browse-all">Browse all</button>
         <a href="mailto:corrections@realtrump.info">Submit a correction</a>
