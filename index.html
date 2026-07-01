@@ -95,8 +95,7 @@
   .mode-quote .quote{font-size:clamp(24px, 4.6vw, 32px);}
 
   /* <strong> = underline emphasis (keeps the surrounding weight) rather than extra boldness.
-     The line is continuous, but a paper-colored halo around the glyphs knocks it out where
-     descenders cross it, so the underline appears to fall behind the text. */
+     Native skip-ink lets the underline duck around the descenders. */
   .question strong, .question b,
   .quote strong, .quote b,
   .context strong, .context b,
@@ -105,8 +104,7 @@
     text-decoration:underline;
     text-decoration-thickness:.055em;
     text-underline-offset:.14em;
-    text-decoration-skip-ink:none;
-    text-shadow:.03em 0 var(--paper), -.03em 0 var(--paper), .06em 0 var(--paper), -.06em 0 var(--paper);
+    text-decoration-skip-ink:auto;
   }
   .question em, .question i,
   .quote em, .quote i,
