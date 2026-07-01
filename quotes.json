@@ -63,7 +63,14 @@
     "date": "2024-02-10",
     "tags": [
       "foreign-policy"
-    ]
+    ],
+    "note": {
+      "label": "Since then",
+      "text": "Trump has moved to shrink the U.S. commitment to NATO rather than formally quit. In 2026 he ordered 5,000 troops withdrawn from Germany and threatened to cut more — echoing a first-term push to pull forces out of Germany that was ultimately abandoned. He has floated leaving outright, but can't do it alone: wary of exactly that, Congress set a legal floor of 76,000 U.S. troops in Europe and, in 2023, barred any president from exiting NATO without the Senate's approval.",
+      "source_url": "https://www.cfr.org/articles/trump-is-pulling-troops-from-germany-the-missiles-are-a-bigger-problem",
+      "source_name": "Council on Foreign Relations",
+      "date": "2026-05-04"
+    }
   },
   {
     "id": "immigration-poisoning-blood",
@@ -73,7 +80,14 @@
     "source_url": "https://www.c-span.org/clip/campaign-2024/donald-trump-on-illegal-immigrants-poisoning-the-blood-of-our-country/5098439",
     "source_name": "C-SPAN",
     "date": "2023-12-16",
-    "tags": ["immigration"]
+    "tags": ["immigration"],
+    "note": {
+      "label": "Who else said it?",
+      "text": "In Mein Kampf, Hitler warned that great civilizations died out through racial \"blood poisoning\" — language the Nazis used to cast Jews as contaminating Aryan blood and to justify the Holocaust. Scholars of fascism were quick to draw the parallel. Confronted with it, Trump said he had \"never read Mein Kampf\" and never knew Hitler used the phrase — then repeated the \"blood\" line at his next rally.",
+      "source_url": "https://www.pbs.org/newshour/politics/trump-says-he-didnt-know-his-immigration-rhetoric-echoes-hitler-thats-part-of-a-broader-pattern",
+      "source_name": "PBS NewsHour",
+      "date": "2023-12-27"
+    }
   },
   {
     "id": "healthcare-concepts",
@@ -111,7 +125,7 @@
   {
     "id": "constitution-termination",
     "question": "How does Trump feel about the Constitution?",
-    "quote": "A Massive Fraud of this type and magnitude allows for the termination of all rules, regulations, and articles, even those found in the Constitution.",
+    "quote": "A Massive Fraud of this type and magnitude allows for the termination of all rules, regulations, and articles, <strong>even those found in the Constitution</strong>.",
     "context": "In a December 2022 Truth Social post pushing his false 2020-election-fraud claims, arguing they justified throwing out the results or holding a new election.",
     "source_url": "https://www.cnn.com/2022/12/03/politics/trump-constitution-truth-social",
     "source_name": "CNN",
@@ -167,7 +181,7 @@
   {
     "id": "midterms-2026",
     "question": "Is Trump looking forward to the 2026 midterm elections?",
-    "quote": "When you think of it, we shouldn't even have an election.",
+    "quote": "When you think of it, <strong>we shouldn't even have an election</strong>.",
     "context": "Said in a January 2026 Oval Office interview with Reuters, while complaining that the president's party usually loses seats in the midterms.",
     "source_url": "",
     "source_name": "Reuters",
@@ -185,7 +199,7 @@
   {
     "id": "guns-did-nothing",
     "question": "What has Trump done about gun violence?",
-    "quote": "We did nothing.",
+    "quote": "We did <strong>nothing</strong>.",
     "context": "Boasting to the NRA's Great American Outdoor Show in February 2024 that, despite heavy pressure to act on guns after mass shootings during his first term, he refused to enact any restrictions.",
     "source_url": "https://www.voanews.com/a/trump-says-no-one-will-lay-a-finger-on-your-firearms-if-he-wins-/7482066.html",
     "source_name": "VOA News",
@@ -198,6 +212,59 @@
       "source_url": "https://www.cnn.com/2024/05/18/politics/trump-nra-convention-guns/index.html",
       "source_name": "CNN",
       "date": "2024-05-18"
+    }
+  },
+  {
+    "id": "wind-cancer",
+    "question": "What does Trump think about wind power?",
+    "quote": "They say <strong>the noise causes cancer</strong>.",
+    "context": "Railing against wind turbines — which he calls 'windmills' — at a National Republican Congressional Committee dinner in April 2019, alongside claims they tank property values and slaughter birds.",
+    "source_url": "https://www.c-span.org/clip/white-house-event/user-clip-trump-windmills-cause-cancer/4789848",
+    "source_name": "C-SPAN",
+    "date": "2019-04-02",
+    "tags": ["energy"],
+    "emphasis": "quote",
+    "note": {
+      "text": "There is no evidence for this. The American Cancer Society said it was \"unaware of any credible evidence linking the noise from windmills to cancer,\" and researchers have found no such link.",
+      "source_url": "https://www.factcheck.org/2019/04/trumps-faulty-wind-power-claims/",
+      "source_name": "FactCheck.org",
+      "date": "2019-04-04"
+    }
+  },
+  {
+    "id": "renewables-green-scam",
+    "question": "Does Trump believe in renewable energy?",
+    "quote": "If you don't get away from this green scam, <strong>your country is going to fail</strong>.",
+    "context": "Addressing world leaders at the United Nations General Assembly in September 2025, during an off-script attack on renewable energy and climate policy.",
+    "source_url": "https://grist.org/language/strategy-behind-trump-climate-catchphrase-green-new-scam/",
+    "source_name": "Grist",
+    "date": "2025-09-23",
+    "tags": ["energy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "Now official language",
+      "text": "\"Green New Scam\" is no longer just a slogan. Always capitalized, it now appears in White House budget and policy documents, including a 2025 fact sheet titled \"Ending the Green New Scam\" that cut clean-energy funding.",
+      "source_url": "https://www.whitehouse.gov/wp-content/uploads/2025/05/Ending-the-Green-New-Scam-Fact-Sheet.pdf",
+      "source_name": "The White House",
+      "date": "2025-05-02"
+    }
+  },
+  {
+    "id": "solar-not-strong",
+    "question": "What does Trump think of solar power?",
+    "quote": "Solar's wonderful too, but it's <strong>not strong enough</strong>, and <strong>it's very, very expensive</strong>.",
+    "context": "Speaking to workers at a tank factory in Lima, Ohio, in March 2019, as he touted record U.S. oil and gas production.",
+    "source_url": "https://www.newsweek.com/donald-trump-criticizes-solar-power-windmills-turn-television-1370707",
+    "source_name": "Newsweek",
+    "date": "2019-03-20",
+    "tags": ["energy"],
+    "emphasis": "quote",
+    "note": {
+      "label": "Meanwhile",
+      "text": "Solar has grown so abundant that Australia now has more rooftop solar capacity than all its remaining coal plants combined, driving midday wholesale prices to zero or below. From July 2026, its government requires retailers in New South Wales, South Australia and South-East Queensland to offer households three hours of free electricity in the middle of every day to soak up the surplus.",
+      "source_url": "https://minister.dcceew.gov.au/bowen/media-releases/more-australian-homes-get-access-solar-power",
+      "source_name": "Australian Government",
+      "date": "2025-11-03"
     }
   }
 ]
