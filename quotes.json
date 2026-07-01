@@ -2,8 +2,8 @@
   {
     "id": "housing-prices",
     "question": "What does Trump say about home prices?",
-    "quote": "I want to drive housing prices up for people who own homes.",
-    "context": "At the World Economic Forum in Davos, January 2026; he paired it with a call for lower mortgage rates to help new buyers.",
+    "quote": "I want to <strong>drive housing prices up</strong> for people who own homes.",
+    "context": "At the World Economic Forum in Davos, January 2026.",
     "source_url": "https://www.pbs.org/newshour/politics/watch-trump-says-he-wants-to-drive-housing-prices-up-not-down",
     "source_name": "PBS NewsHour",
     "date": "2026-01-29",
