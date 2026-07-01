@@ -2,8 +2,8 @@
   {
     "id": "housing-prices",
     "question": "What does Trump say about home prices?",
-    "quote": "I want to <strong>drive housing prices up</strong> for people who own homes.",
-    "context": "At the World Economic Forum in Davos, January 2026.",
+    "quote": "I want to drive housing prices up for people who own homes.",
+    "context": "At the World Economic Forum in Davos, January 2026; he paired it with a call for lower mortgage rates to help new buyers.",
     "source_url": "https://www.pbs.org/newshour/politics/watch-trump-says-he-wants-to-drive-housing-prices-up-not-down",
     "source_name": "PBS NewsHour",
     "date": "2026-01-29",
@@ -37,12 +37,19 @@
     "tags": [
       "energy",
       "economy"
-    ]
+    ],
+    "note": {
+      "label": "Since then",
+      "text": "He framed this as a way to bring energy prices down. As of June 30, 2026, AAA's national average for regular gas was about $3.85 a gallon — up roughly 24% from around $3.12 when he took office in January 2025.",
+      "source_url": "https://gasprices.aaa.com/",
+      "source_name": "AAA",
+      "date": "2026-06-30"
+    }
   },
   {
     "id": "nato-delinquent",
     "question": "What did Trump say about defending NATO allies?",
-    "quote": "No, I would not protect you.",
+    "quote": "I would encourage them to do whatever the hell they want.",
     "context": "At a February 2024 rally in Conway, S.C., recounting telling a NATO ally he deemed 'delinquent' that he would not protect it from Russia.",
     "source_url": "https://www.npr.org/2024/02/11/1230658309/trump-would-encourage-russia-to-attack-nato-allies-who-dont-pay-bills",
     "source_name": "NPR",
