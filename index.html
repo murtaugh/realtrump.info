@@ -299,7 +299,7 @@
                                               // note may also be a plain string, or an array of notes.
 
   URLs:  ?q=slug   -> a specific statement (deep link)
-         #tag      -> filtered to a topic (Random draws from that topic)
+         #tag      -> opens on a random quote from that topic (Random itself is unfiltered)
   ============================================================
 -->
 <script>
@@ -348,13 +348,15 @@
     return String(e.quote || '').length < QUOTE_LEADS_MAX ? 'quote' : 'question';
   }
 
-  function pool(){
-    if(!activeTag) return ENTRIES;
-    var p = ENTRIES.filter(function(e){ return tagsOf(e).indexOf(activeTag) !== -1; });
+  function entriesWithTag(tag){
+    var p = ENTRIES.filter(function(e){ return tagsOf(e).indexOf(tag) !== -1; });
     return p.length ? p : ENTRIES;
   }
-  function pickRandom(){
-    var p = pool();
+  // Pick a random entry from a given list (defaults to the whole set), avoiding an
+  // immediate repeat. The Random button always passes the full set — it is never
+  // constrained by the active topic; only a tag click narrows the list.
+  function pickRandom(list){
+    var p = list || ENTRIES;
     if(p.length <= 1) return p[0] || null;
     var pick;
     do { pick = p[Math.floor(Math.random() * p.length)]; }
@@ -449,7 +451,7 @@
     // Each tag is an action button: always draw a fresh random quote carrying
     // that tag (not a toggle). Clicking the same tag again re-draws within it.
     setTag(tag);
-    show(pickRandom());
+    show(pickRandom(entriesWithTag(tag)));
   }
 
   function buildChips(){
@@ -520,24 +522,28 @@
 
     // Honor a ?q= permalink only when the visitor actually navigated to it.
     // On a reload, ignore it and draw a fresh random pick so refresh = new quote.
+    // A #tag landing (no ?q=) opens on a random quote from that topic.
     var entry = null;
     if(qid && navType() !== 'reload'){ entry = ENTRIES.filter(function(e){ return e.id === qid; })[0] || null; }
-    if(!entry) entry = pickRandom();
+    if(!entry) entry = pickRandom(activeTag ? entriesWithTag(activeTag) : ENTRIES);
     show(entry, true);
 
-    document.getElementById('random').addEventListener('click', function(){ show(pickRandom()); });
+    // Random (and the r / arrow shortcut) draw from the whole set and clear any
+    // active topic — they are deliberately not limited to the current tag.
+    function shuffleAll(){ setTag(null); show(pickRandom(ENTRIES)); }
+
+    document.getElementById('random').addEventListener('click', shuffleAll);
 
     document.getElementById('home').addEventListener('click', function(ev){
       ev.preventDefault();
-      setTag(null);
-      show(pickRandom());
+      shuffleAll();
     });
 
     document.addEventListener('keydown', function(ev){
       var t = ev.target && ev.target.tagName;
       if(t === 'INPUT' || t === 'TEXTAREA') return;
       if(ev.key === 'r' || ev.key === 'R' || ev.key === 'ArrowRight'){
-        show(pickRandom());
+        shuffleAll();
       }
     });
   }
