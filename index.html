@@ -189,9 +189,11 @@
 
   @media (max-width:560px){
     .masthead{font-size:20px;}
-    .mode-question .question,.mode-quote .quote{font-size:22px;}
-    .mode-question .quote{font-size:16px;}
-    .mode-quote .question{font-size:14px;}
+    /* Bump the question + quote a notch on small screens, scaled by a single
+       factor (1.25) so their relative sizes stay exactly as before. */
+    .mode-question .question,.mode-quote .quote{font-size:27.5px;}
+    .mode-question .quote{font-size:20px;}
+    .mode-quote .question{font-size:17.5px;}
     .rnd{width:100%;justify-content:center;}
   }
 
